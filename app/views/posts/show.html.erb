@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="section">
+  <div class="container">
+    <h1 class="title">
+      <%= @post.title %>
+    </h1>
+    <p class="content">
+      <%= @post.content %>
+    </p>
+    <div class="buttons mt-2">
+      <% if current_user.id == @post.creator_id %>
+        <%= link_to 'Edit', edit_post_path(@post), class: "button is-light" %>
+      <% end %>
+      <%= link_to 'Back', posts_path, class: "button is-light" %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
