@@ -19,9 +19,6 @@
       </div>
       <div class="field">
         <%= f.label :password, class: "label" %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %>
         <div class="control">
           <% if resource.errors[:password].any? %>
             <%= f.password_field :password, autocomplete: "new-password", class: "input is-danger" %>
@@ -32,6 +29,9 @@
             <% end %>
           <% else %>
             <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
+          <% end %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %>
         </div>
       </div>
