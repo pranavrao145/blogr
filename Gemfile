@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'rexml', '~> 3.2', '>= 3.2.4'
-
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
