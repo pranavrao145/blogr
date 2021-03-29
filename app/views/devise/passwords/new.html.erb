@@ -20,13 +20,20 @@
         </div>
       </div>
 
-      <div class="actions">
-        <%= f.submit "Send me reset password instructions", class: "button is-link" %>
-      </div>
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <%= f.submit "Send me password reset instructions", class:"button is-link" %>
+          </div>
+        </div>
     <% end %>
-
-    <div class="buttons mt-2">
-      <%= render "devise/shared/links" %>
+    <div class="level-right">
+      <div class="level-item">
+        <div class="buttons">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>

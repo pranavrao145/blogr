@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/posts/my_posts', to: "posts#my_posts"
   resources :posts
   devise_for :users
   root to: "posts#index"

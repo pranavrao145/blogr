@@ -3,12 +3,17 @@
     <h1 class="title">
       <%= @post.title %>
     </h1>
+    <h3 class="subtitle">
+      <%= @post.created_at.strftime("%B %d, %Y at %-I:%M %p") %>
+    </h3>
     <p class="content">
       <%= @post.content %>
     </p>
     <div class="buttons mt-2">
-      <% if current_user.id == @post.creator_id %>
-        <%= link_to 'Edit', edit_post_path(@post), class: "button is-light" %>
+      <% if user_signed_in? %>
+        <% if current_user.id == @post.creator_id %>
+          <%= link_to 'Edit', edit_post_path(@post), class: "button is-light" %>
+        <% end %>
       <% end %>
       <%= link_to 'Back', posts_path, class: "button is-light" %>
     </div>

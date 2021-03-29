@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -23,8 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise', '~> 4.7', '>= 4.7.3'
-gem 'rexml', '~> 3.2', '>= 3.2.4'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+gem 'rexml', '~> 3.2', '>= 3.2.4'
+gem 'will_paginate', '~> 3.3'
+gem 'will_paginate-bulma', '~> 1.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -33,7 +37,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -53,4 +57,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

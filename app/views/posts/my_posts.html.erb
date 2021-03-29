@@ -1,7 +1,6 @@
-<!-- TODO: Change logo and deploy application -->
 <div class="section">
   <div class="container">
-    <h1 class="title is-1">All Posts</h1>
+      <h1 class="title is-1">My Posts</h1>
     <% if @posts.blank? %>
       <h3 class="subtitle is-3 has-text-centered mt-4">
         No posts yet.
@@ -19,12 +18,8 @@
               <div class="level-item">
                 <div class="buttons">
                   <%= link_to 'Show', post, class: "button is-link" %>
-                  <% if user_signed_in? %>
-                    <% if current_user.id == post.creator_id %>
-                      <%= link_to 'Edit', edit_post_path(post), class: "button is-link" %>
-                      <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "button is-danger" %>
-                    <% end %>
-                  <% end %>
+                  <%= link_to 'Edit', edit_post_path(post), class: "button is-link" %>
+                  <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "button is-danger " %>
                 </div>
               </div>
             </div>
@@ -39,4 +34,3 @@
     <% end %>
   </div>
 </div>
-
