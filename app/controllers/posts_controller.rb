@@ -14,15 +14,18 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    @title = 'All Posts'
     @post = current_user.posts.build
   end
 
   # GET /posts/1/edit
   def edit
+    @title = 'Edit Post'
   end
 
   # POST /posts or /posts.json
   def create
+    @title = 'New Post'
     @post = current_user.posts.build(post_params)
 
     respond_to do |format|
@@ -38,6 +41,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    @title = 'Update Post'
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: "Post was successfully updated." }
@@ -51,6 +55,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    @title = 'Delete Post'
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
