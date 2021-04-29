@@ -5,16 +5,18 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
+    @title = 'All Posts'
     @posts = Post.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    @title = 'View Post'
   end
 
   # GET /posts/new
   def new
-    @title = 'All Posts'
+    @title = 'New Post'
     @post = current_user.posts.build
   end
 
@@ -25,7 +27,7 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @title = 'New Post'
+    @title = 'Create Post'
     @post = current_user.posts.build(post_params)
 
     respond_to do |format|
