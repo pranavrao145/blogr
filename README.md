@@ -1,3 +1,3 @@
 # README
 
-A simple blog application maid using Ruby on Rails 6.
+A simple blog application made using Ruby on Rails 6.
